@@ -7,7 +7,9 @@ h = Cell().hammingDistance(DNACell2)
 distance = h
 print("Hamming Distance = %s" % distance)
 
-DNACell11 = DNACell1.mutate(40)
-DNACell22 = DNACell2.mutate(40)
+DNACell11 = DNACell1.mutate(4)
+DNACell22 = DNACell2.mutate(4)
+
+
 
 print("Hamming Distance = %s " % Cell().hammingDistance(DNACell11))

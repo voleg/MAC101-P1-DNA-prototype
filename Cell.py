@@ -26,6 +26,9 @@ class Cell(object):
     def rndMol(self):
         return random.randrange(start=0, stop=len(self.list))
 
+    def getNucleotide(self):
+        return self.list[self.rndMol()]
+
     def hammingDistance(self, argDNA):
         hd, iters1 = 0, 0
         while iters1 <= len(self.DNA)-2:
@@ -42,7 +45,11 @@ class Cell(object):
 #        newmols = self.genDNA(num)
 
         for i, v in enumerate(self.rndIndexes(x)):
-            self.DNA[v] = self.rndMol()
+            newNucleotide = self.getNucleotide()
+            while newNucleotide == self.DNA[v]:
+                newNucleotide = self.getNucleotide()
+#            print("%s -? %s" % (self.DNA[v], newNucleotide))
+            self.DNA[v] = newNucleotide
 #        return list(self.rndIndexes(x))
         return self
 
